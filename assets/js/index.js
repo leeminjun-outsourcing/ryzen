@@ -20,6 +20,14 @@ const container = media.styles({
     media:"padding: 50px 7%;"
 });
 
+const support_justify = media.styles({
+    size:"790px",
+    style:" justify-content: space-between;",
+    media:"display: block;"
+});
+
+const support_btn = styles(`display: inline-block;`);
+
 const main = function (){
 return `
     <div class="container bg-gray-900 text-white">
@@ -34,12 +42,12 @@ return `
         <div>
         </div>
     </div>
-    <div class="${container} ${justify} bg-gray-800 text-white flex">
+    <div class="${container} ${support_justify} bg-gray-800 text-white flex">
         <div>
             <h2 class="m-0">{{ main.support.title }}</h2>
             <p>{{ main.support.info }}</p>
         </div>
-        <a class="${btn} my-5 text-white bg-blue-500 line-none" href="https://discord.gg/d7zEFsbMVN">서버 참여하기</a>
+        <a class="${btn} ${support_btn} my-5 text-white bg-blue-500 line-none" href="https://discord.gg/d7zEFsbMVN">서버 참여하기</a>
     </div>
 
     <div class="${grid} container bg-gray-900 text-white ">

@@ -16,20 +16,28 @@ const justify = styles(`
     justify-content: space-between;
 `);
 
+const footer_justify = media.styles({
+    size:"790px",
+    style:" justify-content: space-between;",
+    media:"display: block;"
+})
+
 const navsstyle = styles(`
     color: #222;
     display: block;
 `)
 
-const navslogo = styles(`
-    font-size: 20px;
-    line-height: 0;
-`)
+const navslogo = media.styles({
+    size:"790px",
+    style:"font-size: 20px; line-height: 0;",
+    media:"display: block; text-align: center; margin-bottom: 13px;"
+});
+
 const navslink = styles(`
     float: right;
 `)
 
-const footercontainer = media.styles({
+const footer_container = media.styles({
     size:"790px",
     style:"padding: 40px 16%;",
     media:"padding: 50px 7%;"
@@ -43,7 +51,17 @@ const font13 = styles(`
     font-size: 13px;
 `)
 
+const footer_divide =  media.styles({
+    size:"790px",
+    style:"display: inline-block;",
+    media:"display: none;"
+});
 
+const footer_copy =  media.styles({
+    size:"790px",
+    style:"display: inline-block;",
+    media:"display: block; margin-top: 7px;"
+});
 
 const navs = function() {
 return `
@@ -59,10 +77,10 @@ return `
 
 const footer = function() {
 return `
-    <div class="${footercontainer} bg-gray-900 flex ${justify}">
+    <div class="${footer_container} bg-gray-900 flex ${footer_justify}">
         <div>
             <a class="${footerlogo} text-yellow-400 text-500 block">{{ name }}</a>
-            <p class="${font13} text-gray-200 inline-block">Copyright © 2022 {{ name }}</p><span class="text-gray-200 inline-block mx-4">∙</span><a href="./privacy" class="${font13} text-gray-200 hover:text-gray-300 line-none">개인정보 처리방침</a>
+            <p class="${font13} text-gray-200 inline-block">Copyright © 2022 {{ name }}</p><span class="text-gray-200 mx-4 ${footer_divide}">∙</span><a href="./privacy" class="${font13} ${footer_copy} text-gray-200 hover:text-gray-300 line-none">개인정보 처리방침</a>
         </div>
         <div>
             <p class="${font13} text-gray-200 my-15">Powered by <a href="./yuka" class="text-blue-400 line-none">Yuka</a></p>    
